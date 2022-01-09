@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+//Import App Styles 
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//import Modules
+import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
+
+export default function App () {
+	return (
+		<BrowserRouter>
+			<div className="flex">
+				<div id="links">
+					<Link to="/gif">Click This</Link>
+				</div>
+			</div>
+		<Routes>
+			<Route path="/home" element={<h1>Good Bye !.</h1>}></Route>
+			<Route only path="/gif" element={Gif()}></Route>
+		</Routes>
+		</BrowserRouter>
+	)
 }
 
-export default App;
+const Gif = (props) => {
+	return (
+		<div>
+			<img src="https://c.tenor.com/QqO0dLDL1csAAAAC/tails-the-fox-miles-tails-prower.gif" alt="dummy"></img>
+			<div id="links">
+				<Link to="/home">Clean</Link>
+			</div>
+		</div>
+	)
+}
