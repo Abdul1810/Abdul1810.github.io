@@ -2,11 +2,11 @@
 import './App.css';
 
 //import Modules
-import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Link, BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 
 export default function App () {
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<div className="flex">
 				<div id="links">
 					<Link to="/gif">Click This</Link>
@@ -16,7 +16,7 @@ export default function App () {
 			<Route path="/home" element={<h1>Good Bye !.</h1>}></Route>
 			<Route only path="/gif" element={Gif()}></Route>
 		</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	)
 }
 
