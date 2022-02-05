@@ -6,7 +6,6 @@ import {
 import {
   FaInstagram,
   FaGithub,
-  FaLinkedin,
   FaDiscord
 } from "react-icons/fa";
 
@@ -14,7 +13,9 @@ import { IconButton } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, VStack, Heading, Spacer } from "@chakra-ui/layout";
 
-import { useMediaQuery } from "@chakra-ui/media-query";
+// import { useMediaQuery } from "@chakra-ui/media-query";
+
+import './App.css'
 
 import components from "./components";
 const { Header, Profile, Footer } = components;
@@ -22,8 +23,6 @@ const { Header, Profile, Footer } = components;
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
-
-  const [isNotSmallerScreen] = useMediaQuery("(min-width:600px)");
 
   return (
 	<VStack p="5">

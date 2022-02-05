@@ -62,8 +62,8 @@ export const Header = () => {
 			  setLoad('on');
 			  setTimeout(() => {
 				  setLoad('off');
-				  setButtonValue('Nottu');
-			  }, 2500);
+				  setButtonValue('🙄');
+			  }, 2300);
 		  	}}
 		  >
 			{ButtonValue}

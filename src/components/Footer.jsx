@@ -2,6 +2,7 @@ import React from "react";
 
 import { Text, Flex, Box } from "@chakra-ui/layout";
 import { Icon } from "@chakra-ui/icon";
+// eslint-disable-next-line
 import { Image } from "@chakra-ui/image";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { useMediaQuery } from "@chakra-ui/media-query";
@@ -9,6 +10,7 @@ import { useMediaQuery } from "@chakra-ui/media-query";
 import { DiGithubFull as git } from "react-icons/di"
 
 export const Footer = () => {
+	// eslint-disable-next-line
 	const [isNotSmallerScreen] = useMediaQuery("(min-width:600px)")
 
 	const { colorMode } = useColorMode();
