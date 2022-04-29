@@ -27,7 +27,7 @@ const Contact = (props: any, ref: any) => {
           <Social target="_blank" href="https://twitter.com/">
             <BsTwitter />
           </Social>
-          <Social target="_blank" href="https://www.twitch.tv/logiiz">
+          <Social target="_blank" href="https://www.instagram.com/i.am_rahman/">
             <InstaIcon />
           </Social>
         </SocialWrap>
