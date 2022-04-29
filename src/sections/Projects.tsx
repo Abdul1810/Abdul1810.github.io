@@ -88,7 +88,7 @@ const Projects = (props: any, ref: any) => {
                   </GithubIcon>
                   <H2>Support Bot With Buttons</H2>
                   <ShortDesc>
-                    A Support Bot For Your Server.Easy To Host.Work with Buttons Interaction.
+                    A Support Bot For Your Server.Easy To Host.
                   </ShortDesc>
                 </ProjectTop>
                 <ProjectBottom>

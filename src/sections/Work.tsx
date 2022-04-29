@@ -56,7 +56,7 @@ const Work = (props: any, ref: any) => {
                   <ProjectInfoTextWrap>
                     <ProjectInfoTextWrapInner>
                       <ProjectInfoPos>
-                        <H2 work>Discord Support Bot</H2>
+                        <H2 work>Support Bot</H2>
                         <ProjectInfoText>
                           A Support Bot For Your Server.Easy To Host.Work with Buttons Interaction.
                         </ProjectInfoText>
