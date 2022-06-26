@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: sans-serif;
     letter-spacing: 0.5px;
     text-decoration: none;
+    cursor: auto;
   }
 
   html {
