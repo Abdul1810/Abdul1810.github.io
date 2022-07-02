@@ -40,9 +40,9 @@ export default function App() {
         ContactRef={ContactRef}
       />
       <AnimatedCursor
-          innerSize={40}
+          innerSize={43}
           outerSize={0}
-          trailingSpeed={15}
+          trailingSpeed={19}
           color='255, 255, 255'
           innerScale={1.8}
           clickables={[
@@ -60,7 +60,7 @@ export default function App() {
           ]}
           innerStyle={{
             background: 'transparent',
-            border: "1.5px solid #FFFFFF"
+            border: "1.8px solid #FFFFFF"
           }}
       />
       <Page>
