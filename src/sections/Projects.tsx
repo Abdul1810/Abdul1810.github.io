@@ -1,12 +1,11 @@
 import { forwardRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import Tilt from "react-parallax-tilt";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsCloudDrizzleFill } from "react-icons/bs";
 import { GoLinkExternal } from "react-icons/go";
 import { CgWebsite, CgSupport } from "react-icons/cg";
-// import { BiExtension} from "react-icons/bi";
-// import { GiBugNet } from "react-icons/gi";
-// import { MdGppBad } from "react-icons/md";
+import { IoMdMusicalNotes } from "react-icons/io"
+import { MdInsertPhoto } from "react-icons/md"
 import { Container, H1, H2, Highlight, Split } from "../theme/GlobalStyles";
 import useIsVisible from "../utils/isVisible";
 import Anime from "react-anime";
@@ -51,7 +50,98 @@ const Projects = (props: any, ref: any) => {
           autoplay={autoplayState}
         >
           <Tilt {...config}>
-            <Project target="_blank" href="https://abduldev.me">
+            <Project target="_blank" href="https://weather.rahman.works">
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <BsCloudDrizzleFill />
+                  </GithubIcon>
+                  <H2>Weather App</H2>
+                  <ShortDesc>
+                    A Simple Weather Application That Shows Exact Weather In Your City.
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>REACT</ProjectLang>
+                    <ProjectLang>TAILWIND CSS</ProjectLang>
+                    <ProjectLang>JS</ProjectLang>
+                  </ProjectLangsWrap>
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+          <Tilt {...config}>
+            <Project
+              target="_blank"
+              href="https://lyrics.rahman.works"
+            >
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <IoMdMusicalNotes />
+                  </GithubIcon>
+                  <H2>Lyrics Search</H2>
+                  <ShortDesc>
+                    A Free Website To Search Lyrics For Any Song You Hear.
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>DJANGO</ProjectLang>
+                    <ProjectLang>PYTHON</ProjectLang>
+                    <ProjectLang>HTML</ProjectLang>
+                  </ProjectLangsWrap>
+
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+          <Tilt {...config}>
+            <Project
+              target="_blank"
+              href="https://cdn.rahman.works"
+            >
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <MdInsertPhoto />
+                  </GithubIcon>
+                  <H2>CDN</H2>
+                  <ShortDesc>
+                    A Content Delivery Network To Store My Photo/Media(s) For My Webpages and Web Application. 
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>EXPRESS</ProjectLang>
+                    <ProjectLang>JS</ProjectLang>
+                    <ProjectLang>CLOUD</ProjectLang>
+                  </ProjectLangsWrap>
+
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+        </Anime>
+      </ProjectsWrap>
+      <ProjectsWrap>
+        <Anime
+          delay={(el: Element, index: number) => 500}
+          {...configAnimate}
+          autoplay={autoplayState}
+        >
+          <Tilt {...config}>
+            <Project target="_blank" href="https://rahman.works">
               <ProjectPadding>
                 <ProjectTop>
                   <GithubIcon>

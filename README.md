@@ -1,6 +1,6 @@
 # Personal Portfolio
 This is my personal portfolio page created in React and TypeScript
-### Website: https://abduldev.me
+### Website: https://rahman.works
 
 ## To install and run it:
 

@@ -2,7 +2,7 @@ import { forwardRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container, H1, H2, Highlight, Split } from "../theme/GlobalStyles";
 import { GoLinkExternal } from 'react-icons/go';
-import SupportPic from "../assets/proj1.png";
+import SupportPic from "../assets/proj1.jpg";
 // import holidazePic from "../assets/1i3h0.jpg";
 import Anime from "react-anime";
 import useIsVisible from "../utils/isVisible";
@@ -48,29 +48,25 @@ const Work = (props: any, ref: any) => {
           >
             <Project>
               <Img src={SupportPic} />
-              <ProjectInfoWrap
-                target="_blank"
-                href="https://github.com/Abdul1810/support-bot-with-buttons"
-              >
+              <ProjectInfoWrap>
                 <ProjectInfo>
                   <ProjectInfoTextWrap>
                     <ProjectInfoTextWrapInner>
                       <ProjectInfoPos>
-                        <H2 work>Support Bot</H2>
+                        <H2 work>Cargo Management System</H2>
                         <ProjectInfoText>
-                          A Support Bot For Your Server.Easy To Host.Work with Buttons Interaction.
+                          Includes (Admin Panel, Shipment Management, Mail Notification, etc..)
                         </ProjectInfoText>
                       </ProjectInfoPos>
                       <ProjectLink>
-                        <GoLinkExternal />
                       </ProjectLink>
                     </ProjectInfoTextWrapInner>
                   </ProjectInfoTextWrap>
                 </ProjectInfo>
                 <ProjectLangsWrap>
-                  <ProjectLang>Node-JS</ProjectLang>
-                  <ProjectLang>Discord.js</ProjectLang>
-                  <ProjectLang>JS</ProjectLang>
+                  <ProjectLang>PHP</ProjectLang>
+                  <ProjectLang>SQL</ProjectLang>
+                  <ProjectLang>JQUERY</ProjectLang>
                 </ProjectLangsWrap>
                 <CloudPos></CloudPos>
               </ProjectInfoWrap>
@@ -128,7 +124,7 @@ const Img = styled.img`
 `;
 
 const ProjectInfoWrap = styled.a<ProjectsStyle>`
-  width: 500px;
+  width: 1200px;
   display: flex;
   flex-direction: column;
   gap: 20px;
