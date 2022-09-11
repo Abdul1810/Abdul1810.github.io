@@ -52,7 +52,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={cpp} alt='mySvgImage' />
+                  <img src={cpp.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>C++</P>
               </LanguageTop>
@@ -62,7 +62,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={java} alt='mySvgImage' />
+                  <img src={java.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Java</P>
               </LanguageTop>
@@ -72,7 +72,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={kotlin} alt='mySvgImage' />
+                  <img src={kotlin.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Kotlin</P>
               </LanguageTop>
@@ -82,7 +82,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={html5} alt='mySvgImage' />
+                  <img src={html5.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Html</P>
               </LanguageTop>
@@ -92,7 +92,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={css3} alt='mySvgImage' />
+                  <img src={css3.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Css</P>
               </LanguageTop>
@@ -102,7 +102,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={python} alt='mySvgImage' />
+                  <img src={python.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Python</P>
               </LanguageTop>
@@ -112,7 +112,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={javascript} alt='mySvgImage' />
+                  <img src={javascript.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Javascript</P>
               </LanguageTop>
@@ -122,7 +122,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={php} alt='mySvgImage' />
+                  <img src={php.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Php</P>
               </LanguageTop>
@@ -132,7 +132,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={sql} alt='mySvgImage' />
+                  <img src={sql.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Sql</P>
               </LanguageTop>
@@ -142,7 +142,7 @@ const Languages = (props: any, ref: any) => {
             <LanguagePadding>
               <LanguageTop>
                 <GithubIcon>
-                  <img src={shellscript} alt='mySvgImage' />
+                  <img src={shellscript.default} alt='mySvgImage' />
                 </GithubIcon>
                 <P>Shellscript</P>
               </LanguageTop>
