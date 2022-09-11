@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Container, H1, H2, Highlight, Split } from "../theme/GlobalStyles";
 import { GoLinkExternal } from 'react-icons/go';
 import SupportPic from "../assets/proj1.jpg";
-// import holidazePic from "../assets/1i3h0.jpg";
 import Anime from "react-anime";
 import useIsVisible from "../utils/isVisible";
 

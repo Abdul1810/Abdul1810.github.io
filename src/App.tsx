@@ -8,6 +8,7 @@ import { GlobalStyle, theme } from "./theme/GlobalStyles";
 
 import AboveTheFold from "./sections/AboveTheFold";
 import Work from "./sections/Work";
+import Languages from "./sections/Languages"
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 
@@ -20,6 +21,7 @@ const AnimatedCursor = require("react-animated-cursor");
 export default function App() {
   const AboveTheFoldRef = useRef<HTMLDivElement>();
   const WorkRef = useRef<HTMLDivElement>();
+  const LanguagesRef = useRef<HTMLDivElement>();
   const ProjectsRef = useRef<HTMLDivElement>();
   const ContactRef = useRef<HTMLDivElement>();
 
@@ -66,6 +68,7 @@ export default function App() {
       <Page>
         <AboveTheFold ref={AboveTheFoldRef} />
         <Work ref={WorkRef} />
+        <Languages ref={LanguagesRef} />
         <Projects ref={ProjectsRef} />
         <Contact ref={ContactRef} />
         <Footer />
