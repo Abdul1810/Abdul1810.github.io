@@ -42,7 +42,6 @@ const Languages = (props: any, ref: any) => {
           Languages<Highlight>.</Highlight>
         </Split>
       </H1>
-
       <LanguagesWrap>
         <Anime
           delay={(el: Element, index: number) => 500}
