@@ -9,12 +9,19 @@ const Languages = (props: any, ref: any) => {
 
   const isElmVisible = useIsVisible(ref);
 
-  let configAnimate = {
+  let configAnimateUp = {
     duartion: 1000,
     translateY: ["5em", 0],
     opacity: [0, 1],
     autoplay: false,
   };
+  
+  let configAnimateDown = {
+    duartion: 1000,
+    translateY: ["-5em", 0],
+    opacity: [0, 1],
+    autoplay: false,
+  };;
 
   useEffect(() => {
     if (isElmVisible) {
@@ -27,13 +34,13 @@ const Languages = (props: any, ref: any) => {
       <H1>
         Known{" "}
         <Split>
-          Languages<Highlight>.</Highlight>
+          Languages <Highlight>&</Highlight> Technologies<Highlight>.</Highlight>
         </Split>
       </H1>
       <LanguagesWrap>
         <Anime
           delay={(el: Element, index: number) => 500}
-          {...configAnimate}
+          {...configAnimateDown}
           autoplay={autoplayState}
         >
           <Language>
@@ -138,6 +145,114 @@ const Languages = (props: any, ref: any) => {
           </Language>
         </Anime>
       </LanguagesWrap>
+      <LanguagesWrap>
+        <Anime
+          delay={(el: Element, index: number) => 500}
+          {...configAnimateUp}
+          autoplay={autoplayState}
+        >
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                <svg width="48px" height="48px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#e2e2e2" fill-rule="evenodd" d="M256,48,496,464H16Z"/></svg>
+                </GithubIcon>
+                <P>Vercel</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEzUlEQVRoge1YXW8bRRQ9d9frxknsxKYkhgQS54FCQRVRo9hOQnksqlB/AEJ8SaBKSE7TNqVN4mRoKqACpVQC8UJpQZQHxEMFRe0bD5VwxYdUECKiLQhI2xhK4jhRnPpjd3iwLDnxzuz6oxISPm+7586998zMzhwbqKOOOuqo4/8MKn549dLRC+DYKQr+7eICbl5eMeVUTeFtj7ge/Wj0xI+ygs+8Obzt75/WLutZg8z4zu0t6B7wihNwfDk1MPFk4VFZzyn7AGRFY7uCXjibVFNOzxp0e8H4VNY8AKz9o58VNe9sVHFfX4tseEYx+P7iF+sEsNDYzxx4TzRadSq4PyiencTc2pZnj408L+Kfe2Pfi0vX0wER3z3ohepURDQ48HZ0KPpL8buS6E05lQG4JUri39oMd5tTWCF5M32CMVaSl33FHIkbt4+Dc9OhHn8D7t7SJGwewF8NmuO1jS9LCh1+7HCCiCaEaQgIPO4DkekuwOqtjPtXR/Ldje+vXVw6mVrImHdIQM8OrzAnABCng4f6DiUtBQCAEcy+D9C3omQefwM2P9AoLLb4e+qlPTMjHYXnPTMjHYk/154Wxbc/6EZz+yZhPoC+N8LZj80YUwGMmME53wvAfL0BdA/6oGrmM5ZJ6crSov5Z4TmxYHyeSemmtVRNQVe4VdI8DIL+MiNmmJHiNQPAYtNnCPSUiJ/7Lok/YglTjlTCPb2tOx061+Z+SJ7jhvlcBIZ86Oj1yNo4NRWeeEFEij95ACD9FQCrIrqj1wNXi8OU4zrH6o3Uh4n51GlR865WDfduc8s6WOZqbkwWIBXAQuw6QK8LB6uE7iGfcHxyPu1fiWc2i/ieHT6QKtkEREdYP4vLepSvAABvwv0WgKsi/q6eRni7XFZpSuALWI675l10v2OVx1JAZFckzTk/KIsJDPmgKNLPaR1IJQQGJXYhHxWJ7IqkrXJZCgAANhA9S8AFEd/o0+CX7+V16Oz1wOXVhDwB56bC4+ft5LIlIJ+UW/ikVqFPKoazSUXndrnfMRRlvyygGLYFRMPRWU4ouWELyPsk6XkOAOgekPsdgB9nwbErdvuyLSCP3BQA4ang3yq/Ue34HU56id+RoSwBLMSWAT4pDJB5Ght+B4TRfA37KHMFAB7ST1r5JLNZbn+o2cLv4NJkcNzU78hQtgBGzCCDhiHzSRv2uepU0BWSHpsG5xgmImFOEcoWAACTg2MxAJ+I+I0njdUJxQmn2cDEN5X0UpEAAOBq7gAA4X4tnPU27ogVzSH5/WGBigWwfhYn4JiIz9+2PstbmgA23jc+X2kfFQsAAMOTk/okX8Bl5XeutiY8wrvFDqoSwB5mGRBGK89Aw3b8jjRDNYMLOBI7ep4DT5Q57Iup8MTuamtXtQIFWPkkE2S4ohyoRe2aCIiGo7MAWXr3AjjHTDl+R4aaCAAATlkGiU8qQhxKTvgrr1zUTAALsWUCRa3iiKhsvyNDzQQAgBHKfgBAfKMSj0WDY2dqWbOmAvI+SRH9n2Rwg/ZW4ndkqKkAIO+TOLjZLJ+q1O/IUHMBAABVH8V6n7Ts0Ky/j0pwRwSwfhYnQtFJw6vyOzLcmRUAYLhzMwCuAJj1a22274j/FFhsejf7erpci1FHHXWUgX8BcmVo3cljsxQAAAAASUVORK5CYII=" />
+                </GithubIcon>
+                <P>Vue</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                  <img src="data:image/png;base64,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" />
+                </GithubIcon>
+                <P>Postgres</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEIUlEQVRoge2ZTWhcVRTHf2dekjYfJvRD0CTVVDraRAsqFUrb2AbBjaAbxZUgrSBSbFqKzcKvyUIQBNuIUISIWdTNrFy0i0JpqbaVQrZ106WSVmo/Uk1TE2dOF3cmfe/lvbx7X+80CP3DMPPeu/ee//+dc+499w48xP8QOsGrOsE1neCV5eZSyNnvNWA1cFhLucfwgrzGB2rfz9HH277I5EFeAf2h36P6Hc0+yOSBswA9SifQHbpVpIV3/VFyg7sH5hkAJHJPKGmZVk+cnOAuQCLhU0c3M7wfvqGK6GFO6SF+ykvOBr4EgPCxfs8jC9eHeAtlCHhDv2ZHXoJZcBegCzNQHGsJ2AugZQKEUsjK57nYWSDPLJTsAYOPdJzVTPFepJ0ytJQXVBE9x5f6C7/rr/S5kHESUEvUpQx0UWAE5ZMES4leUEU4xxjKCEIvFbdwc/PALBsz+/zFASr0Lma62AtaJuA848CHoXZFF0puAqpLhg9UgCsEzKRaW/CClgno4QeUXbE2T7tQchOQNgPV8SdGxI3adxw1L+hFWuimjPJOQhsnDzS5NEYYQFOezQNXF0jAP0BXQruAUW4wDbyeMlJRFRFJtRSBmwBdwgOXgWro+ibQAQShewWgmJmk7VygB/jDhpJ1CNUKtg2JD/8Frsc7ALdilopAp4Wxin0e2OdAM0VIqTqnINHhtzC5EADPYEceQBshoJASPreB6VQiMIMh32FtySmR7QWklRBpbx9gJbAZaLe2Umdl7QH7JE6aQv+ufZLQCuzE7c3X0ZAQkpgHFDPzJKGd/OQNntJJu12elQAtUVj0Vm5C4orbwf2SB2hilvU2De080Md6CO24FLiS0K4TQ77NatQsZlaJbCcgnsDXgDuxNqsw5H1tLC3zwE5AOIGrmJonjFXAILDCjpslrDxgOwvdE3AVmAs9WQtsJ22Jyw9LD9gKMCFUIfr2H8WQd6uo7CCeQkgVwayl98plgMcwYdMI8ga9eiJ7CczOgR/pAboi5fLjwDailaZ/CG0pxWMI2QL+q4VPvVx+Athq1dMHMsMoOwCEfu5gyuU+4CWU+Mlco2BRE2ULqNLPFGYn8PwDJA9WVWm2gNvspJsqzyI8SPIGHjywhlZ6l+1PjEwB2cR62A1c9MHGCcIlNPvYPlOADHKSlbyAso/0vZdPzKCMMs0mGeRYJj+XkfUCa5jjM4Q9+F8FFOEocxyUocRaNxG5klJ/5kUKjGEKCR+YpMCwbOW8a8fcs4oqwlneRPgKeDLnMJdRSmxnXCRyqmSN+54WdZI2ZjmIMILZxttgHuUIzXwqWyKnR87wNq/rGdbRxBeJ551RnKTKsLzMbz7sel+Y9CxDwBiwKWbpErBftnHcp72GrKx6miZa+ABlGAhQvqWVb2Qz842w9xDLibtqWvbN1ZrtxgAAAABJRU5ErkJggg==" />
+                </GithubIcon>
+                <P>Firbase</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                  <img src="data:image/png;base64,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" />
+                </GithubIcon>
+                <P>Azure</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                  <svg height="48" viewBox="175.7 78 490.6 436.9" width="48" xmlns="http://www.w3.org/2000/svg"><g fill="#61dafb"><path d="m666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9v-22.3c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6v-22.3c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zm-101.4 106.7c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24s9.5 15.8 14.4 23.4zm73.9-208.1c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6s22.9-35.6 58.3-50.6c8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zm53.8 142.9c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6z"/><circle cx="420.9" cy="296.5" r="45.7"/></g></svg>
+                </GithubIcon>
+                <P>React</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                  <img src="data:image/png;base64,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" />
+                </GithubIcon>
+                <P>Mongodb</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEcElEQVRoge2YbWjVVRzHP+d/dzfNh/k4bCZKpBLL2nIlLRPMamwtzaIxxzRNmVEp+S4KCnpRL4LCpIdhiYLOcbEs5/KxCGYOcjgrl6UplsxkZHOjzLvtnm8vrru7d/fB3YcNivuF+3C+5/A/n+85f/7ndy+klVZaaaWV1n9YJuVXbG3N5NKoO3AxHWvH4CCs6UK9F7jcfZLyvO5UTpeaAB65mHyuApkq0INAZn+nQIFGD+hrZHYw7kothYU9yU6dfICvTs9DzsdAXmhHCHi/1/dhOI/PrKd4Zn0y0ycX4MszyxEfEX3F+72gj5CG1XtM+ntDoruReIBDpx8FPgMyAkDxgAd/FfUo4ylKZ3rjxUgswIFfcjC+VmBSTMgbgYd6B/D98wSPFV6NByWxAPt/2ozRGsAiDgJNSG04TEHMQSwGRg4KPLgpHSHLW8bDhZ1DF6D+56m4feeQOYJ6qymdczZszOFTE+mx7yAtHxR4aMgWbG8ZS+6+GJWhoSUfn1OL0cr4A+w7NQPpcf66fRPlxhdzbMP3LyHzBih0npiBBNABeh3HtY2yOzsC/btbZuDwHJh1SL+TfWVW6g+ygdpzYi3GvA84gwAf4MsHtAHtQC6QGzR2FUvnbh36AACfn6gCtoJcoYCBt1Dpht4hls4txhg5qaOMoSX525GtQLqGBFZgLcj6wfpe1l73gzwN8OBH8C3DGMFQ1EKx9EnLPeCrxXBbiB9pxSOeKzRiKaf83kt9xvDsQJ+eLDhGJndh7WtIHTFX3AZ7asfaF7nsLAqGh+HegWB5jo7EcUoRxWAKQNMQ2WAMqBP0KzLHcdjHqD/3U1oa8ZSOHsBzdCQZWSWgEqAAmI40xt+pTjAXQC0YHcTtaoj3BE2VwgPUNLuZyDqMXgYmAoO5RzuAjYxwvTXcQUIDeI5OxcnwAEV+I0qBFr1oO4tRJeVF36YeNbL6A3iOT8b0NAKzEwAP1jWk5Sy7f1eKWSPK/xSSDHh3Ijs7/Alw/XkdzQv3RyDVUftN1XAE8O9AXdMa0ObrnoCLSG0YpiBuCQSNvOJRfFnE81Qt+HAowPtkqGl2M9Z7BshB2kgGH1A+/7fAiB2N4zHmadCrwPg4634h8worFrwZk8LjcXE1Zz3SblYtPB9fgJ2N85DZgqNKKh74LurInUdy6bV7MSqIxBqz7jdsx8UGKhf+EXbdbYdnIacGdB8+362sfiR6GR0xQDzyHMrG694LzI9Sy4d7gaauAXuQOYlj27HmZqAItAj/LVrDqoeejYsn7gAANfU3MWL0p6DiQYKHXyPcb6cnI4+1EXboBkqslHj3iyzGZnmAxREhBw8OogejJawu3pcISuK1UE2zG3fH28ALMQEhykkOSF6klVSX1CWKkXwxt+VAGTKbkGaE9UUD90/9A7KrqS45lsz0yZfTzxTvpXfCLNAKrD2I1B3042OgvIgGMBW0NeUnCw9DUU57PJl0jc7DmmkYM84/i+nCmvNoQitrk/8/NK200korrbT+N/oXJ84utH7CpIYAAAAASUVORK5CYII=" />
+                </GithubIcon>
+                <P>Tailwind</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEcUlEQVRoge2Wf4hUVRTHP+fNrLrm7K4LapiB5R9Fu82kM6ubBrUUEUpiLRrYDyVKa6NsVoq0kE0lqGhnTMl+EIYUhRn2QyKSsF+abjOyvnWLMEo2wQJjnXVtdXbePf0xd9Qxdx1/1R+9Dwz33XPPvfd77j3nzQMfHx8fHx8fHx8fn/8rcjpjJN18l6q+B+DGEhJJPb5OkfmF/r8p8Ew4/7WA8yVYipNRcQU+u9hizoWSAuioSySAxEXWck4cD2DirsXXGKO3GXSUMTpOTsr0yPfNa1R0LoAbS1TXdDaNcI4OnSuGOxDGAyGQPUa8J/dEV7nh1KIp4MxGiKFcChoC6UL0i56eqpX7GlqOFtaubWueKgFzn6jUAdUAAhmFvUZ0WZl4B3Mm8JQg04ExQLeKbpF+b6Vbv3p/EEXC6XjSM+ZRIK/7lDI16HCBkYW+89fQehFeK/bTyxx1RgOTRAP3qugjaGFMAMaiUl8RyoSARWiLE05nVoM2ocUb5qfpKDyn13Nkp8AVJw2PFJWFBIOzJu5aPMWJpOMLgcfsLl2gaxG+GuzaAmgf6HqEmQHHqUE1aYeuPsXVoDJPhDuB/dbWCBBOZx4CmvLh6RZUZwOfWp/DiNPoOGYJJ8S/isj1wCu2P8Yz3nJH4WFr6C7DibqxZJMgawcLoL0uuc2NJuerR4+nZoYINXao/BRXdeta1++OJjaJHhc3xrYP2va3kYerprt1yY1AF4CCutHWHSC3W59DXnnlIjfausMrr4wDh/JmuTUIXGU7benYSwcHE16gNvXEBCfd/yEOtSjo6f9OijAixySfHIW6s/uy68uGlhyACDlVkBM+hWAPdNa0ZAE6a1qy4VT8AFAFVDuALSgdNdDmjhQnqYi3FKQW2IvKPBXuP2ME/0C7AQTGH7cYzdnHMgCFwoGOi6YWDAew7eXWvj8IbAOmA5OuTcWfUYLvov2jT65kxRlqS8vWl16Z31zaMr0VG6pCh242JdxCMdIOjFWIhFPNbyi6VeE6KQSgiKTZTD7VQlkuWRdOx9/OKvcIjLDCPnAco08DvfY0Vjjkflbk5eLD0hH26QiAI9KWn693V4QyfQbZfJbqAbOcE7f/gMA7AjfZwWMI6pngMuBXq20OyscCc6yPW+7lVjrtk5Pt4klUlXXAPiAL9AFdCp/nD6uQi9oDENTeZ1GeA3YAe227WdC3AIzon8Av9pdfQkyRzY2t2gk6TWED0An6LdBh3bsBOie/+LuXJabICpTv7NxvBJZQFpi6s351zxnvvWZ7vDowhD+AICpfu3WtN5Z4xGdNOB3fgnIL4LqxRKSUOYN+Sozf2jIsOKTnTUWDACJ8dAF0AhBJNW8y0CGqP6iIJ5gGKx5EPyl1nQEDiKYWlGXJbFSYASDC9tywijXnrdyi6ASBWQjkX6/5ZBDYfbRvyPOlrjPg53Q69np/R7Rypog2gizNDatsKLyLLwSCvg/8SP7FcAToUFiuZYFpP93wwuELtY+Pj4+Pj4+Pj4+Pz4D8DUmtqDiE44CsAAAAAElFTkSuQmCC" />
+                </GithubIcon>
+                <P>Django</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+          <Language>
+            <LanguagePadding>
+              <LanguageTop>
+                <GithubIcon>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAHa0lEQVRoge2af2xT1xXHP+fZ+d1CEiiIioLt8GvTNLXKpq1aJdp17VYJNlUq6SbiQIC88GMwfnXq1LRKEd0G7ZqW8iPGpHR2QtWkXaeOsXUVo5XKOq1j2thQywa2Q1NQ10LQNghx7Hf2R5zkEeyQl9jqP/1KT3nvnHPvOV+/++6959zAZ/h0IbnqeM4Bc3LC4l5URdT1xuma5n/nwk/WCUxv31Dk7r28TtAG4IaUOI7QnN+baDi5/Pn/ZtNfVgl4Q/ULMXQHiieDyVmQx6Onp+2jsdHKhs+sEKhoW1FpWfIsyNds4qRCSFALZCngGlAo/MEQXR+pDr47Xt/jIjDngDm5z+JRlDX2AIG31ND1scXBvwJ4DpjzjCRPK9xns1GElw2Xe9Pp7+3+YKwxjIlAZcDMO1+sqwXZAkywqbpAHolWB8IIOrydN1S/UEWbBCps4ksCT1mJ+E9jtS9ccRqLYwK+n9d9Qw3ZAXzOJr4s8GS8oGRbV1VTz0jtM5JXPkCkIeoPhJzEM2oCIw0DJPlQdHFLpxPHM8PmNAMagRWAMRiQckTVWh9dsu/4aPq5LoEZbavKXJpsRFkNuG1Nj4nq+kjN3redBD4c/ROA8Qxwh01sIbS54n2bTi3b//FI7TMSuPNIo7uz69wy0K3ATTbVOZDGbE6FKOINmw8gPAnMtGm6FdlWUnCh6URVR3zUBGY9X3tTMi/vEPAlm7hXlaaSQvcTJ6p2/y8rgQ/D1JC/pNgofBiVTUCRTfVu3Mq778Mlu84Pb5OWgDdc3wq6eMhIXk0YxuYzi/dEsh/2tfDsX+mRPGs7yqIhqYai/uCS4bbu4YKU8YLUTY+ILIxUBw7nIM6MiNU2x4AqT6huvoj8GigB+XY62wwEmAigQiSaheA9B8x5ktQvglGqqoUickXhTMKSv3ctaf4wI5Ga4FvesPkv4Fag1AmBUcMbNv8EfBn4z8zpN096867GBADti1y+3jLTgk2SpKJ/tCoi9P8F8gzFG64/Jlg/ifiDr4zFv3F9k5GhUJ66nRCLxdxDwZd3KOwetuqm66FSkZe94bqfjcX/uAmkgy9eWq/o/UMSPQo8JqLLVeS7qrIK9GnAtvjJRl9r3YLhfV0P4x5C6aAqNbbHH0f9wUfS2VUGzIe7i+WlAbKqrAMOOvGVkzcAzBi4sSzJGNCx+r19ivEjGNj4yVdTn8eokRMCAt2DDly6oeLF1bdkso3695xUdIOg21T0Kae+cjKELOU1ET4PgLLISiQWpabD48BJVN+31PWPG4rOnzhR1RGP+YPPDjauduYrJwR66NlaLEXzUW63iWenLhDBEIvLvWUJb9h8H+S3BonAaX/LKae+cjKEPqoJXyq/xHyFlSB/BDJt+tzAF0A3W7je84TMdU595eQNQP8HCgSAgGf/0kIx3HMQYy7CbIVZqfXhNuDGgVhEaPK11r3jJFfOOoGK0MopFtZ8AEt4u9O/91wqVTyeugYxa8faAqv8yj2qsov+mcsAeQAYNYGsDyFLrCqEdoT2VMaVEafWPdcbqQ4eRCU4IFOY5sRf1gmIin3LvXBqyF8yikZDSYyFowpe1gnEC4uPAB+lHqcVG0VvVIRWfP3OI43XDFfP/pUeT2vdY0DtUEDWISf+sv4NdFU19fjCdWsUaQcMlNstMQ53dp3FGzY/Ac4ruAXKwSpDbQuv0HHav+/3TvzlZBqN+IOviOh3gK5hqsnA3NQMVGaTJ4CdxfndDpexHE6jkergwcqA+Xp3kSxU0btAbwOZQn9iIsAFVP4phh5NWtZLnTX7omPxk4nARaBUlApfa92CSHXQ0Q5xAKm14BepyzG8rea9KHNSj93pbNIOIRH5Zeq2UFV+5Q2bv/EcMOddY9ifYA1W1ybF85NjCXQ4fG31s71h8zWU14FiAFVeTWeb9g3E8xOb8nqN2bZq87ckyd2+kLkr4XJtObN4TzeAL1x/v4oO1Iw+Sf3iY8as1rUTktrboJb+AMgf0uhRy+XenK5N5r13+yKXN166DJWtwBSb5hJwmP5q9D2DjoSOaPXeqjFF3thoeH3nahF9Aphq03wM0hAtuNBCVUfat3vd5MHXbk7UKzyKsJarfpWr0Avylag/8DensftC5h0q8gxopU3cp7CTRHxLrPaFiyO1H3X242urn43FGkWrgUk21XuKsTrmb37TSeAVL66+RROJ7QoP2uNQ9JDg3hj17zk5mn4cl9dn7VhbkJzYMxe3q9SwEmed7uFvDpjFhcX8UOEhUh9oCidFZWOkJuBoJc7KEdPclmU39uW5V6iwVFX2xCLT9l5T+FXEE657UJDtCPYU86IoW8p62DmWSWDcBLxty2diuf5M/yo70OlfkpZ8v3NJ4B3IWEJPAi2uvr6G65XQR0JW3sCMtlU+l5VsAuz1SwXa6D/kq+bqNeeqM7TxIKvHrL7W+rtR3aGkEvprMeIZ2liQ1c1cpDpwuOwytyq6HrAfaF8WeLyvoGRO1B8IZSt4yOG/GkxvX16e3+v+pqWWJgqt33VVtVzIla/P8Gni/yulzlOAkfO+AAAAAElFTkSuQmCC" />
+                </GithubIcon>
+                <P>NodeJS</P>
+              </LanguageTop>
+            </LanguagePadding>
+          </Language>
+        </Anime>
+      </LanguagesWrap>
     </Container>
   );
 };
@@ -149,7 +264,6 @@ const LanguagesWrap = styled.div`
   grid-template-columns: repeat(auto-fill, 150px);
   gap: 4px;
   justify-content: center;
-
   width: 100%;
   margin-top: 60px;
   @media screen and (max-width: 1350px) {
@@ -183,23 +297,24 @@ const Language = styled.a`
 `;
 
 const LanguagePadding = styled.div`
-  margin: 30px;
+  margin-top: 30px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media screen and (max-width: 600px) {
-    margin: 25px;
+    margin-top: 25px;
   }
 `;
 
 const LanguageTop = styled.div``;
 
 const GithubIcon = styled.div`
+  padding-left: 1.6rem;
   font-size: 50px;
 
   @media screen and (min-width: 600px) {
-    padding-left: 18px;
+    padding-left: 1em;
   }
 `;
 

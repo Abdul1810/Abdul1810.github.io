@@ -19,7 +19,7 @@ export default function Planet() {
                 value: "#919ba8",
               },
               shape: {
-                type: "circle",
+                type: "star",
                 stroke: {
                   width: 0,
                   color: "#000000",

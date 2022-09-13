@@ -22,12 +22,12 @@ const Home = (props: any, ref: any) => {
           </Anime>
           <Anime delay={(el: Element, index: number) => 1000} {...config}>
             <H2>
-              A <Highlight>full stack developer</Highlight> from India.
+              A <Highlight>Full Stack Developer</Highlight> From India.
             </H2>
           </Anime>
           <Anime delay={(el: Element, index: number) => 1500} {...config}>
             <SubText>
-              I create experiences that make people's lives easier.
+              I Create Experiences That Make People's Lives Easier.
             </SubText>
           </Anime>
         </Div>

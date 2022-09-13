@@ -18,24 +18,24 @@ const Contact = (props: any, ref: any) => {
         </LinkStyle>
         <SocialWrap>
           <Social target="_blank" href="https://github.com/Abdul1810">
-            <BsGithub />
+            <BsGithub style={{cursor:"pointer"}} />
           </Social>
 					<Social target="_blank" href="https://wa.me/+917448600651">
-            <BsWhatsapp />
+            <BsWhatsapp style={{cursor:"pointer"}} />
           </Social>
           <Social target="_blank" href="https://www.instagram.com/i.am_rahman/">
-            <InstaIcon />
+            <InstaIcon style={{cursor:"pointer"}} />
           </Social>
         </SocialWrap>
 				<SocialWrap>
           <Social target="_blank" href="https://discord.com/users/737553088218529813">
-            <FaDiscord />
+            <FaDiscord style={{cursor:"pointer"}} />
           </Social>
 					<Social target="_blank" href="https://open.spotify.com/user/ozm1250i7gcbvvkxi0mr5ahvq">
-            <FaSpotify />
+            <FaSpotify style={{cursor:"pointer"}} />
           </Social>
           <Social target="_blank" href="https://twitter.com/_i_am_rahman_">
-            <BsTwitter />
+            <BsTwitter style={{cursor:"pointer"}} />
           </Social>
         </SocialWrap>
       </InnerCont>
@@ -54,6 +54,7 @@ const InnerCont = styled.div`
 
 const LinkStyle : any = styled.a`
   ${H2} {
+    cursor: pointer;
     transition: color 0.2s ease;
     &:hover {
       color: ${(props: any) => props.theme.colors.primary};
