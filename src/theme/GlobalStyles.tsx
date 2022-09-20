@@ -2,7 +2,7 @@ import styled, { DefaultTheme, createGlobalStyle } from 'styled-components';
 
 const theme: DefaultTheme = {
   colors: {
-    primary: "#007FFF",
+    primary: "#3b82f6",
     primaryHover: "",
     primaryActive: "",
     secondary: "",
