@@ -259,7 +259,7 @@ const Project = styled.a`
     height: 100%;
   }
   :hover {
-	@@ -267,50 +148,71 @@ const Project = styled.a`
+
   }
 `;
 
