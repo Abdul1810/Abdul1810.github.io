@@ -47,13 +47,13 @@ const Work = (props: any, ref: any) => {
           >
             <Project>
               <Img src={SupportPic} />
-              <ProjectInfoWrap>
-                <ProjectInfo>
-                  <ProjectInfoTextWrap>
-                    <ProjectInfoTextWrapInner>
-                      <ProjectInfoPos>
-                        <H2 work>Cargo Management System</H2>
-                        <ProjectInfoText>
+              <ProjectInfoWrap target="_blank" href="https://cdn.rahman.works/projects/cargo/">
+                <ProjectInfo style={{cursor:"pointer"}}>
+                  <ProjectInfoTextWrap style={{cursor:"pointer"}}>
+                    <ProjectInfoTextWrapInner style={{cursor:"pointer"}}>
+                      <ProjectInfoPos style={{cursor:"pointer"}}>
+                        <H2 style={{cursor:"pointer"}} work>Cargo Management System</H2>
+                        <ProjectInfoText style={{cursor:"pointer"}}>
                           Includes (Admin Panel, Shipment Management, Mail Notification, etc..)
                         </ProjectInfoText>
                       </ProjectInfoPos>
@@ -82,7 +82,6 @@ export default forwardRef(Work);
 const ProjectsCont = styled.div`
   margin-top: 60px;
   width: 100%;
-
   @media screen and (max-width: 1350px) {
     margin-top: 50px;
   }
@@ -105,7 +104,6 @@ const Project = styled.div<ProjectsStyle>`
   display: flex;
   align-items: center;
   flex-direction: ${(props) => (props.inverted ? "row-reverse" : "row")};
-
   @media screen and (max-width: 1200px) {
     flex-direction: column;
   }
@@ -115,7 +113,6 @@ const Img = styled.img`
   border-radius: 5px;
   max-width: 700px;
   width: 100%;
-
   @media screen and (max-width: 1200px) {
     flex-direction: column;
     border-radius: 5px 5px 0 0;
@@ -132,7 +129,6 @@ const ProjectInfoWrap = styled.a<ProjectsStyle>`
   margin-right: ${({ inverted }) => (inverted ? "-80px" : "0")};
   margin-top: 16px;
   position: relative;
-
   @media screen and (max-width: 1200px) {
     margin-left: 0;
     margin-right: 0;
@@ -140,11 +136,8 @@ const ProjectInfoWrap = styled.a<ProjectsStyle>`
     max-width: 700px;
     width: 100%;
   }
-
   :hover {
-    ${H2} {
-      color: ${({ theme }) => theme.colors.primary};
-    }
+	@@ -267,50 +148,71 @@ const Project = styled.a`
   }
 `;
 
@@ -156,11 +149,9 @@ const ProjectInfoTextWrap = styled.div`
   background-color: ${(props) => props.theme.colors.raisinBlack};
   height: 150px;
   border-radius: 5px;
-
   @media screen and (max-width: 320px) {
     height: 170px;
   }
-
   @media screen and (max-width: 1200px) {
     border-radius: 0 0 5px 5px;
   }
@@ -185,7 +176,6 @@ const ProjectLink = styled.div`
   cursor: pointer;
   font-size: 30px;
   transition: color 0.2s ease;
-
   @media only screen and (max-width: 600px) {
     font-size: 20px;
     margin-top: 5px;
@@ -197,7 +187,6 @@ const ProjectLangsWrap = styled.div<ProjectsStyle>`
   gap: 15px;
   justify-content: ${(props) => (props.inverted ? "flex-start" : "flex-end")};
   height: 15px;
-
   @media screen and (max-width: 1200px) {
     justify-content: flex-end;
   }
