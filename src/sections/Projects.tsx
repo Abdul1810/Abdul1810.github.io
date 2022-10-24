@@ -54,7 +54,7 @@ const Work = (props: any, ref: any) => {
                       <ProjectInfoPos style={{cursor:"pointer"}}>
                         <H2 style={{cursor:"pointer"}} work>Cargo Management System</H2>
                         <ProjectInfoText style={{cursor:"pointer"}}>
-                          Includes (Admin Panel, Shipment Management, Mail Notification, etc..)
+                          Includes (Admin Panel,Shipment Management,Mail Notification,etc..)
                         </ProjectInfoText>
                       </ProjectInfoPos>
                       <ProjectLink>
