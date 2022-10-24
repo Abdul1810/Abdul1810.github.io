@@ -1,29 +1,26 @@
 import { forwardRef, useState, useEffect } from "react";
 import styled from "styled-components";
+import Tilt from "react-parallax-tilt";
+import { BsGithub, BsCloudDrizzleFill } from "react-icons/bs";
+import { GoLinkExternal } from "react-icons/go";
+import { CgWebsite, CgSupport } from "react-icons/cg";
+import { IoMdMusicalNotes } from "react-icons/io"
+import { MdInsertPhoto } from "react-icons/md"
 import { Container, H1, H2, Highlight, Split } from "../theme/GlobalStyles";
-import { GoLinkExternal } from 'react-icons/go';
-import SupportPic from "../assets/proj1.jpg";
-import Anime from "react-anime";
 import useIsVisible from "../utils/isVisible";
+import Anime from "react-anime";
 
-const Work = (props: any, ref: any) => {
-  const [ autoplayState, setAutoplayState ] = useState(false);
+const Projects = (props: any, ref: any) => {
+  const [autoplayState, setAutoplayState] = useState(false);
 
   const isElmVisible = useIsVisible(ref);
-  
-  let configLeft = {
+
+  let configAnimate = {
     duartion: 1000,
-    translateX: ["-5em", 0],
+    translateY: ["5em", 0],
     opacity: [0, 1],
     autoplay: false,
   };
-  // let configRight = {
-  //   duartion: 1000,
-  //   translateX: ["5em", 0],
-  //   opacity: [0, 1],
-  //   autoplay: false,
-  // };
-
 
   useEffect(() => {
     if (isElmVisible) {
@@ -31,188 +28,284 @@ const Work = (props: any, ref: any) => {
     }
   }, [isElmVisible]);
 
+  const config = {
+    tiltMaxAngleX: 5,
+    tiltMaxAngleY: 5,
+    tiltReverse: false,
+  };
+
   return (
-    <Container mt="-100px" ref={ref} {...props}>
+    <Container mt="50px" ref={ref} {...props}>
       <H1>
+        Notable{" "}
         <Split>
-          Highlighted Work<Highlight>.</Highlight>
+          Projects <Highlight>&</Highlight> Concepts<Highlight>.</Highlight>
         </Split>
       </H1>
-      <ProjectsCont>
-        <ProjectPos>
-          <Anime
-            delay={(el: Element, index: number) => 500}
-            {...configLeft}
-            autoplay={autoplayState}
-          >
-            <Project>
-              <Img src={SupportPic} />
-              <ProjectInfoWrap target="_blank" href="https://cdn.rahman.works/projects/cargo/">
-                <ProjectInfo style={{cursor:"pointer"}}>
-                  <ProjectInfoTextWrap style={{cursor:"pointer"}}>
-                    <ProjectInfoTextWrapInner style={{cursor:"pointer"}}>
-                      <ProjectInfoPos style={{cursor:"pointer"}}>
-                        <H2 style={{cursor:"pointer"}} work>Cargo Management System</H2>
-                        <ProjectInfoText style={{cursor:"pointer"}}>
-                          Includes (Admin Panel,Shipment Management,Mail Notification,etc..)
-                        </ProjectInfoText>
-                      </ProjectInfoPos>
-                      <ProjectLink>
-                      </ProjectLink>
-                    </ProjectInfoTextWrapInner>
-                  </ProjectInfoTextWrap>
-                </ProjectInfo>
-                <ProjectLangsWrap>
-                  <ProjectLang>PHP</ProjectLang>
-                  <ProjectLang>SQL</ProjectLang>
-                  <ProjectLang>JQUERY</ProjectLang>
-                </ProjectLangsWrap>
-                <CloudPos></CloudPos>
-              </ProjectInfoWrap>
+
+      <ProjectsWrap>
+        <Anime
+          delay={(el: Element, index: number) => 500}
+          {...configAnimate}
+          autoplay={autoplayState}
+        >
+          <Tilt {...config}>
+            <Project target="_blank" href="https://weather.rahman.works">
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <BsCloudDrizzleFill />
+                  </GithubIcon>
+                  <H2>Weather App</H2>
+                  <ShortDesc>
+                    A Simple Weather Application That Shows Exact Weather In Your City.
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>REACT</ProjectLang>
+                    <ProjectLang>TAILWIND CSS</ProjectLang>
+                    <ProjectLang>JS</ProjectLang>
+                  </ProjectLangsWrap>
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
             </Project>
-          </Anime>
-        </ProjectPos>
-      </ProjectsCont>
+          </Tilt>
+          <Tilt {...config}>
+            <Project
+              target="_blank"
+              href="https://lyrics.rahman.works"
+            >
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <IoMdMusicalNotes />
+                  </GithubIcon>
+                  <H2>Lyrics Search</H2>
+                  <ShortDesc>
+                    A Free Website To Search Lyrics For Any Song You Hear.
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>DJANGO</ProjectLang>
+                    <ProjectLang>PYTHON</ProjectLang>
+                    <ProjectLang>HTML</ProjectLang>
+                  </ProjectLangsWrap>
+
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+          <Tilt {...config}>
+            <Project
+              target="_blank"
+              href="https://cdn.rahman.works"
+            >
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <MdInsertPhoto />
+                  </GithubIcon>
+                  <H2>CDN</H2>
+                  <ShortDesc>
+                    A Content Delivery Network To Store My Photo/Media(s) For My Webpages and Web Application. 
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>EXPRESS</ProjectLang>
+                    <ProjectLang>JS</ProjectLang>
+                    <ProjectLang>CLOUD</ProjectLang>
+                  </ProjectLangsWrap>
+
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+        </Anime>
+      </ProjectsWrap>
+      <ProjectsWrap>
+        <Anime
+          delay={(el: Element, index: number) => 500}
+          {...configAnimate}
+          autoplay={autoplayState}
+        >
+          <Tilt {...config}>
+            <Project target="_blank" href="https://rahman.works">
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <BsGithub />
+                  </GithubIcon>
+                  <H2>Portfolio</H2>
+                  <ShortDesc>
+                    The Webpage You're Currently Viewing.
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>REACT</ProjectLang>
+                    <ProjectLang>TS</ProjectLang>
+                    <ProjectLang>HTML</ProjectLang>
+                    <ProjectLang>CSS</ProjectLang>
+                  </ProjectLangsWrap>
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+          <Tilt {...config}>
+            <Project
+              target="_blank"
+              href="https://github.com/Abdul1810/support-bot-with-buttons"
+            >
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <CgSupport />
+                  </GithubIcon>
+                  <H2>Support Bot With Buttons</H2>
+                  <ShortDesc>
+                    A Support Bot For Your Server.Easy To Host.
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>Node-JS</ProjectLang>
+                    <ProjectLang>Discord.js</ProjectLang>
+                    <ProjectLang>JS</ProjectLang>
+                  </ProjectLangsWrap>
+
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+          <Tilt {...config}>
+            <Project
+              target="_blank"
+              href="https://http.cat/401"
+            >
+              <ProjectPadding>
+                <ProjectTop>
+                  <GithubIcon>
+                    <CgWebsite />
+                  </GithubIcon>
+                  <H2>Upcoming Project</H2>
+                  <ShortDesc>
+                    A Under Development Project For Discord.Coming Soon...
+                  </ShortDesc>
+                </ProjectTop>
+                <ProjectBottom>
+                  <ProjectLangsWrap>
+                    <ProjectLang>Javascript</ProjectLang>
+                  </ProjectLangsWrap>
+
+                  <ProjectLink>
+                    <GoLinkExternal />
+                  </ProjectLink>
+                </ProjectBottom>
+              </ProjectPadding>
+            </Project>
+          </Tilt>
+        </Anime>
+      </ProjectsWrap>
     </Container>
   );
-}
+};
 
-export default forwardRef(Work);
+export default forwardRef(Projects);
 
-const ProjectsCont = styled.div`
-  margin-top: 60px;
+const ProjectsWrap = styled.div`
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  gap: 40px;
+  justify-content: center;
+
   width: 100%;
-
+  margin-top: 60px;
   @media screen and (max-width: 1350px) {
     margin-top: 50px;
   }
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
 `;
 
-const ProjectPos = styled.div`
-  padding: 0 30px;
+const Project = styled.a`
+  width: 350px;
+  height: 300px;
   display: flex;
-  flex-direction: column;
-  gap: 80px;
-  overflow: hidden;
-`;
 
-interface ProjectsStyle {
-  readonly inverted?: boolean;
-}
-
-const Project = styled.div<ProjectsStyle>`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: ${(props) => (props.inverted ? "row-reverse" : "row")};
-
-  @media screen and (max-width: 1200px) {
-    flex-direction: column;
-  }
-`;
-
-const Img = styled.img`
-  border-radius: 5px;
-  max-width: 700px;
-  width: 100%;
-
-  @media screen and (max-width: 1200px) {
-    flex-direction: column;
-    border-radius: 5px 5px 0 0;
-  }
-`;
-
-const ProjectInfoWrap = styled.a<ProjectsStyle>`
-  width: 1200px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  color: ${({ theme }) => theme.colors.textLight};
-  margin-left: ${({ inverted }) => (inverted ? "0" : "-80px")};
-  margin-right: ${({ inverted }) => (inverted ? "-80px" : "0")};
-  margin-top: 16px;
-  position: relative;
-
-  @media screen and (max-width: 1200px) {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    max-width: 700px;
-    width: 100%;
-  }
-
-  :hover {
-    ${H2} {
-      color: ${({ theme }) => theme.colors.primary};
-    }
-  }
-`;
-
-const ProjectInfo = styled.div`
-  width: 100%;
-`;
-
-const ProjectInfoTextWrap = styled.div`
   background-color: ${(props) => props.theme.colors.raisinBlack};
-  height: 150px;
+  color: ${({ theme }) => theme.colors.textLight};
   border-radius: 5px;
-
-  @media screen and (max-width: 320px) {
-    height: 170px;
+  @media screen and (max-width: 600px) {
+    width: 300px;
+    height: 100%;
   }
-
-  @media screen and (max-width: 1200px) {
-    border-radius: 0 0 5px 5px;
+  :hover {
+	@@ -267,50 +148,71 @@ const Project = styled.a`
   }
 `;
 
-const ProjectInfoTextWrapInner = styled.div`
-  padding: 20px 30px;
+const ProjectPadding = styled.div`
+  padding: 30px;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
-const ProjectInfoText = styled.p`
-  max-width: 350px;
-  line-height: 1.4;
+const ProjectTop = styled.div``;
+const ProjectBottom = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
 `;
 
-const ProjectLink = styled.div`
-  width: 30px;
-  height: 30px;
-  margin-top: 10px;
-  color: ${(props) => props.theme.colors.primary};
-  cursor: pointer;
-  font-size: 30px;
-  transition: color 0.2s ease;
+const GithubIcon = styled.div`
+  font-size: 50px;
+`;
 
-  @media only screen and (max-width: 600px) {
-    font-size: 20px;
-    margin-top: 5px;
+const ShortDesc = styled.div`
+  margin-top: 10px;
+  line-height: 1.4;
+  @media screen and (max-width: 600px) {
+    margin: 20px 0;
   }
 `;
 
-const ProjectLangsWrap = styled.div<ProjectsStyle>`
+const ProjectLangsWrap = styled.div`
   display: flex;
   gap: 15px;
-  justify-content: ${(props) => (props.inverted ? "flex-start" : "flex-end")};
-  height: 15px;
-
-  @media screen and (max-width: 1200px) {
-    justify-content: flex-end;
-  }
+  align-items: center;
+  position: relative;
 `;
 
 const ProjectLang = styled.div`
   color: ${(props) => props.theme.colors.textDim};
 `;
 
-const ProjectInfoPos = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const CloudPos = styled.div`
-  position: absolute;
+const ProjectLink = styled.div`
+  width: 30px;
+  height: 30px;
+  color: ${(props) => props.theme.colors.primary};
+  font-size: 30px;
+  margin-top: -10px;
 `;
